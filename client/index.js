@@ -1,8 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom'
 import App from './components/App'
-import TasksContext from './TasksContext'
 import {HashRouter as Router} from 'react-router-dom'
+import {TasksProvider} from './TasksContext'
 
 //redux stuff
 //import { createStore, applyMiddleware, compose } from 'redux'
@@ -12,11 +12,11 @@ import {HashRouter as Router} from 'react-router-dom'
 
 document.addEventListener('DOMContentLoaded', () => {
   render(
-    <TasksContext.Provider>
+    <TasksProvider>
       <Router>
         <App/>
       </Router>
-    </TasksContext.Provider>,
+    </TasksProvider>,
     
     document.getElementById('app')
   )

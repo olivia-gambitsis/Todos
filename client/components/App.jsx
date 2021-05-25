@@ -1,26 +1,18 @@
-import React from 'react'
-import AddTodo from './AddTodo'
-import{Route} from 'react-router-dom'
-import Footer from './Footer'
-import Main from './Main'
+import React from "react";
+import { TasksContext } from "../TasksContext";
+import AddTodo from "./AddTodo";
+import { Route } from "react-router-dom";
+import Footer from "./Footer";
+import Main from "./Main";
 
-export class App extends React.Component {
- 
-  componentDidMount () {}
-
-  render () {
-    return (
-      <>
-      
-        <AddTodo />
-        <Route exact path ='/' component={Main}/>
-        <Footer/>
-      
+export default function App() {
+  const store = React.useContext(TasksContext)
+  return (
+    <>
+    {console.log(store)}
+      <AddTodo />
+      <Route exact path="/" component={Main} />
+      <Footer />
     </>
-    )
-      
-  }
+  );
 }
-
-
-export default App

@@ -1,35 +1,26 @@
 import React from 'react'
-import { connect } from 'react-redux'
-
-import { fetchFruits } from '../actions'
+import AddTodo from './AddTodo'
+import{Route} from 'react-router-dom'
+import Footer from './Footer'
+import Main from './Main'
 
 export class App extends React.Component {
-  state = {
-    fruits: []
-  }
-
-  componentDidMount () {
-    this.props.dispatch(fetchFruits())
-  }
+ 
+  componentDidMount () {}
 
   render () {
     return (
-      <div className='app'>
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
-        <ul>
-          {this.props.fruits.map(fruit => (
-            <li key={fruit}>{fruit}</li>
-          ))}
-        </ul>
-      </div>
+      <>
+      
+        <AddTodo />
+        <Route exact path ='/' component={Main}/>
+        <Footer/>
+      
+    </>
     )
+      
   }
 }
 
-function mapStateToProps (globalState) {
-  return {
-    fruits: globalState.fruits
-  }
-}
 
-export default connect(mapStateToProps)(App)
+export default App

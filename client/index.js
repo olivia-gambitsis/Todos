@@ -3,6 +3,7 @@ import { render } from 'react-dom'
 import App from './components/App'
 import {HashRouter as Router} from 'react-router-dom'
 import {TasksProvider} from './TasksContext'
+import 'regenerator-runtime/runtime'
 
 //redux stuff
 //import { createStore, applyMiddleware, compose } from 'redux'

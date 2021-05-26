@@ -17,8 +17,10 @@ function reducer(state, action) {
 
 export const TasksProvider = (props) =>{
 
+    const [state, dispatch] = React.useReducer(reducer, initialState)
+    const value = {state, dispatch}
     return(
-        <TasksContext.Provider value='data from store'>
+        <TasksContext.Provider value={value}>
             {props.children}
         </TasksContext.Provider>
 
